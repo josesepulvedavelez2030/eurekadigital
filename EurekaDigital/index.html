@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eureka Digital - Creamos soluciones digitales que impulsan tu negocio">
+    <meta name="keywords" content="desarrollo software, aplicaciones web, móviles, escritorio, soluciones empresariales">
+    <meta name="author" content="Eureka Digital">
+    <title>Eureka Digital - Soluciones Digitales a Medida</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💡</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-lightbulb"></i>
+                <span data-i18n="navigation.logo">Eureka Digital</span>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="#inicio" class="nav-link" data-i18n="navigation.home">Inicio</a>
+                <a href="#nosotros" class="nav-link" data-i18n="navigation.about">Nosotros</a>
+                <a href="#servicios" class="nav-link" data-i18n="navigation.services">Servicios</a>
+                <a href="#productos" class="nav-link" data-i18n="navigation.products">Productos</a>
+                <a href="#contacto" class="nav-link" data-i18n="navigation.contact">Contacto</a>
+                <div class="language-selector">
+                    <button class="language-toggle" id="language-toggle">
+                        <i class="fas fa-globe"></i>
+                        <span class="current-lang">ES</span>
+                    </button>
+                    <div class="language-dropdown" id="language-dropdown">
+                        <button class="language-option active" data-lang="es">🇪🇸 Español</button>
+                        <button class="language-option" data-lang="en">🇺🇸 English</button>
+                    </div>
+                </div>
+                <button class="theme-toggle" id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <!-- Spectacular Image Carousel -->
+        <div class="hero-carousel" id="hero-carousel">
+            <div class="carousel-container">
+                <div class="carousel-slide active">
+                    <div class="slide-content">
+                        <div class="slide-visual web-dev">
+                            <div class="slide-icon">💻</div>
+                            <div class="slide-particles">
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                            </div>
+                        </div>
+                        <div class="slide-text">
+                            <h3 data-i18n="carousel.web.title">Desarrollo Web Moderno</h3>
+                            <p data-i18n="carousel.web.subtitle">Creamos experiencias web impactantes</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-slide">
+                    <div class="slide-content">
+                        <div class="slide-visual mobile-app">
+                            <div class="slide-icon">📱</div>
+                            <div class="slide-particles">
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                            </div>
+                        </div>
+                        <div class="slide-text">
+                            <h3 data-i18n="carousel.mobile.title">Apps Móviles Innovadoras</h3>
+                            <p data-i18n="carousel.mobile.subtitle">Soluciones nativas y multiplataforma</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-slide">
+                    <div class="slide-content">
+                        <div class="slide-visual desktop-software">
+                            <div class="slide-icon">🖥️</div>
+                            <div class="slide-particles">
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                            </div>
+                        </div>
+                        <div class="slide-text">
+                            <h3 data-i18n="carousel.desktop.title">Software Empresarial</h3>
+                            <p data-i18n="carousel.desktop.subtitle">Herramientas potentes para tu negocio</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-slide">
+                    <div class="slide-content">
+                        <div class="slide-visual cloud-solutions">
+                            <div class="slide-icon">☁️</div>
+                            <div class="slide-particles">
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                            </div>
+                        </div>
+                        <div class="slide-text">
+                            <h3 data-i18n="carousel.cloud.title">Soluciones Cloud</h3>
+                            <p data-i18n="carousel.cloud.subtitle">Infraestructura escalable y segura</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-slide">
+                    <div class="slide-content">
+                        <div class="slide-visual ai-solutions">
+                            <div class="slide-icon">🤖</div>
+                            <div class="slide-particles">
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                            </div>
+                        </div>
+                        <div class="slide-text">
+                            <h3 data-i18n="carousel.ai.title">Inteligencia Artificial</h3>
+                            <p data-i18n="carousel.ai.subtitle">Automatización inteligente de procesos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Carousel Controls -->
+            <div class="carousel-controls">
+                <button class="carousel-btn prev-btn" id="carousel-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn next-btn" id="carousel-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators" id="carousel-indicators">
+                <button class="indicator active" data-slide="0"></button>
+                <button class="indicator" data-slide="1"></button>
+                <button class="indicator" data-slide="2"></button>
+                <button class="indicator" data-slide="3"></button>
+                <button class="indicator" data-slide="4"></button>
+            </div>
+        </div>
+        
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text" data-i18n="hero.title">Eureka Digital</span>
+                </h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">
+                    Creamos soluciones digitales que impulsan tu negocio
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        <span data-i18n="hero.ctaPrimary">Contáctanos</span>
+                    </a>
+                    <a href="#servicios" class="btn btn-secondary">
+                        <i class="fas fa-eye"></i>
+                        <span data-i18n="hero.ctaSecondary">Ver Servicios</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section id="nosotros" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="about.title">Sobre Nosotros</h2>
+                <p class="section-subtitle" data-i18n="about.subtitle">Innovación, calidad y soluciones personalizadas</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3 data-i18n="about.descriptionTitle">Transformamos ideas en realidad digital</h3>
+                    <p data-i18n="about.description">
+                        En Eureka Digital, somos un equipo apasionado de desarrolladores de software 
+                        dedicados a crear soluciones innovadoras que impulsen el crecimiento de tu negocio. 
+                        Nuestro enfoque se centra en entender tus necesidades y desarrollar productos 
+                        digitales que superen tus expectativas.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label" data-i18n="about.stats.projects">Proyectos Completados</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">30+</span>
+                            <span class="stat-label" data-i18n="about.stats.clients">Clientes Satisfechos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label" data-i18n="about.stats.years">Años de Experiencia</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="services.title">Nuestros Servicios</h2>
+                <p class="section-subtitle" data-i18n="services.subtitle">Soluciones tecnológicas para todas tus necesidades</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card" data-service="web">
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 data-i18n="services.web.title">Desarrollo Web</h3>
+                    <p data-i18n="services.web.description">
+                        Creamos sitios web modernos, rápidos y responsivos que cautivan a tus visitantes 
+                        y convierten visitantes en clientes.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> <span data-i18n="services.web.features.0">Sitios Corporativos</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="services.web.features.1">Tiendas Online</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="services.web.features.2">Landing Pages</span></li>
+                    </ul>
+                </div>
+                
+                <div class="service-card" data-service="mobile">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 data-i18n="services.mobile.title">Aplicaciones Móviles</h3>
+                    <p data-i18n="services.mobile.description">
+                        Desarrollamos aplicaciones nativas y multiplataforma para iOS y Android que ofrecen 
+                        experiencias excepcionales.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> <span data-i18n="services.mobile.features.0">Apps Nativas</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="services.mobile.features.1">Apps Híbridas</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="services.mobile.features.2">Progressive Web Apps</span></li>
+                    </ul>
+                </div>
+                
+                <div class="service-card" data-service="desktop">
+                    <div class="service-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3 data-i18n="services.desktop.title">Aplicaciones de Escritorio</h3>
+                    <p data-i18n="services.desktop.description">
+                        Construimos aplicaciones de escritorio robustas y eficientes para Windows, macOS y Linux.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> <span data-i18n="services.desktop.features.0">Software Empresarial</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="services.desktop.features.1">Herramientas Productividad</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="services.desktop.features.2">Sistemas Integrados</span></li>
+                    </ul>
+                </div>
+                
+                <div class="service-card" data-service="enterprise">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 data-i18n="services.enterprise.title">Software Empresarial</h3>
+                    <p data-i18n="services.enterprise.description">
+                        Diseñamos sistemas a medida que optimizan procesos y mejoran la eficiencia 
+                        operativa de tu empresa.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> <span data-i18n="services.enterprise.features.0">ERP Personalizados</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="services.enterprise.features.1">CRM a Medida</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="services.enterprise.features.2">Automatización de Procesos</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos/Proyectos -->
+    <section id="productos" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="products.title">Nuestros Proyectos</h2>
+                <p class="section-subtitle" data-i18n="products.subtitle">Casos de éxito que demuestran nuestra experiencia</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 data-i18n="products.project1.title">E-Commerce Platform</h3>
+                        <p data-i18n="products.project1.description">Plataforma de e-commerce completa con gestión de inventario, pagos integrados y panel administrativo.</p>
+                        <div class="product-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 data-i18n="products.project2.title">Business Analytics Dashboard</h3>
+                        <p data-i18n="products.project2.description">Panel de análisis en tiempo real con visualización de datos y reportes personalizados para la toma de decisiones.</p>
+                        <div class="product-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-mobile"></i>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 data-i18n="products.project3.title">Delivery Mobile App</h3>
+                        <p data-i18n="products.project3.description">Aplicación móvil para servicio de delivery con seguimiento en tiempo real, pagos y calificaciones.</p>
+                        <div class="product-tech">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Maps API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="contact.title">Contacto</h2>
+                <p class="section-subtitle" data-i18n="contact.subtitle">Hablemos sobre tu próximo proyecto</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 data-i18n="contact.info.email.title">Email</h3>
+                            <p data-i18n="contact.info.email.value">info@eurekadigital.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 data-i18n="contact.info.whatsapp.title">WhatsApp</h3>
+                            <p data-i18n="contact.info.whatsapp.value">+1 234 567 8900</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 data-i18n="contact.info.location.title">Ubicación</h3>
+                            <p data-i18n="contact.info.location.value">Desarrollamos soluciones a distancia para clientes en todo el mundo</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required data-i18n-placeholder="contact.form.name" placeholder="Tu Nombre">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required data-i18n-placeholder="contact.form.email" placeholder="Tu Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" data-i18n-placeholder="contact.form.phone" placeholder="Tu Teléfono (Opcional)">
+                        </div>
+                        <div class="form-group">
+                            <select id="service" name="service" required data-i18n-select="contact.form.service">
+                                <option value="" data-i18n="contact.form.service">Selecciona un servicio</option>
+                                <option value="web" data-i18n="contact.form.serviceOptions.web">Desarrollo Web</option>
+                                <option value="mobile" data-i18n="contact.form.serviceOptions.mobile">Aplicaciones Móviles</option>
+                                <option value="desktop" data-i18n="contact.form.serviceOptions.desktop">Aplicaciones de Escritorio</option>
+                                <option value="enterprise" data-i18n="contact.form.serviceOptions.enterprise">Software Empresarial</option>
+                                <option value="other" data-i18n="contact.form.serviceOptions.other">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" required data-i18n-placeholder="contact.form.message" placeholder="Describe tu proyecto..." rows="5"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i>
+                            <span data-i18n="contact.form.submit">Enviar Mensaje</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-lightbulb"></i>
+                    <span data-i18n="navigation.logo">Eureka Digital</span>
+                </div>
+                <div class="footer-text">
+                    <p data-i18n="footer.copyright">&copy; 2024 Eureka Digital. Todos los derechos reservados.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón WhatsApp flotante -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/12345678900" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
