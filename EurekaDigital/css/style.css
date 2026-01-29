@@ -258,8 +258,9 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
-    opacity: 0.15;
+    z-index: 999;
+    opacity: 0.7;
+    pointer-events: none;
 }
 
 .carousel-container {
@@ -297,8 +298,8 @@ body {
 
 .slide-visual {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -307,10 +308,11 @@ body {
 }
 
 .slide-icon {
-    font-size: 4rem;
+    font-size: 6rem;
     z-index: 2;
     position: relative;
     animation: iconFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
 }
 
 .slide-particles {
@@ -322,10 +324,11 @@ body {
 
 .particle {
     position: absolute;
-    width: 8px;
-    height: 8px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     animation: particleFloat 4s ease-in-out infinite;
+    box-shadow: 0 0 10px currentColor;
 }
 
 .web-dev .particle {
@@ -400,21 +403,26 @@ body {
 
 .slide-text {
     text-align: center;
-    max-width: 300px;
+    max-width: 400px;
+    padding: 20px;
 }
 
 .slide-text h3 {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: var(--text-color);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #667eea;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .slide-text p {
-    color: var(--text-light);
-    font-size: 1rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    color: #764ba2;
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+    line-height: 1.4;
 }
 
 /* Carousel Controls */
@@ -426,16 +434,17 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 0 40px;
-    z-index: 10;
+    z-index: 1000;
+    pointer-events: auto;
 }
 
 .carousel-btn {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(102, 126, 234, 0.8);
     backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -443,6 +452,7 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
+    pointer-events: auto;
 }
 
 .carousel-btn:hover {
@@ -459,7 +469,8 @@ body {
     transform: translateX(-50%);
     display: flex;
     gap: 15px;
-    z-index: 10;
+    z-index: 1000;
+    pointer-events: auto;
 }
 
 .indicator {
@@ -491,13 +502,20 @@ body {
     gap: 40px;
     align-items: center;
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 .hero-content {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .hero-title {
@@ -506,6 +524,8 @@ body {
     font-weight: 700;
     margin-bottom: 20px;
     line-height: 1.2;
+    position: relative;
+    z-index: 0;
 }
 
 .gradient-text {
@@ -529,6 +549,8 @@ body {
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
+    position: relative;
+    z-index: 0;
 }
 
 .btn {
@@ -543,6 +565,8 @@ body {
     cursor: pointer;
     border: none;
     font-size: 1rem;
+    position: relative;
+    z-index: 0;
 }
 
 .btn-primary {
