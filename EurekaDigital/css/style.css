@@ -89,6 +89,12 @@ body {
     font-weight: 600;
     font-size: 1.5rem;
     color: var(--text-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.nav-logo:hover {
+    color: var(--primary-color);
 }
 
 .nav-logo i {
