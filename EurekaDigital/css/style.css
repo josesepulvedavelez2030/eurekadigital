@@ -977,6 +977,11 @@ body {
     margin: 0;
 }
 
+.contact-details a {
+    text-decoration: none;
+    color: var(--text-light);
+}
+
 /* Contact Form */
 .contact-form {
     background: var(--card-bg);
