@@ -71,6 +71,16 @@ body {
     background: rgba(15, 23, 42, 0.95);
 }
 
+[data-theme="dark"] .slide-text h3 {
+    color: #a78bfa;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+[data-theme="dark"] .slide-text p {
+    color: #c084fc;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
