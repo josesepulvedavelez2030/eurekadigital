@@ -474,10 +474,10 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 100%;
+    left: 40px;
+    right: 40px;
     display: flex;
     justify-content: space-between;
-    padding: 0 40px;
     z-index: 1000;
     pointer-events: auto;
 }
@@ -1136,7 +1136,8 @@ body {
     }
 
     .carousel-controls {
-        padding: 0 20px;
+        left: 20px;
+        right: 20px;
     }
 
     .carousel-btn {
