@@ -34,6 +34,18 @@ function initHeroCarousel() {
             indicators[index].classList.add('active');
         }
         
+        // Reset typing animation for new active slide
+        const activeSlide = slides[index];
+        const title = activeSlide.querySelector('.slide-text h3');
+        if (title) {
+            // Remove animation
+            title.style.animation = 'none';
+            // Force reflow
+            title.offsetHeight;
+            // Re-add animation
+            title.style.animation = 'typing 5s steps(60) forwards, blink 0.75s step-end infinite';
+        }
+        
         currentSlide = index;
     }
     
