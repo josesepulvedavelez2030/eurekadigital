@@ -4,7 +4,6 @@
         "home": "Inicio",
         "about": "Nosotros",
         "services": "Servicios",
-        "products": "Productos",
         "contact": "Contacto"
     },
     "hero": {
@@ -56,8 +55,8 @@
         },
         "mobile": {
             "title": "Aplicaciones Móviles",
-            "description": "Desarrollamos aplicaciones nativas y multiplataforma para iOS y Android que ofrecen experiencias excepcionales.",
-            "features": ["Apps Nativas", "Apps Híbridas", "Progressive Web Apps"]
+            "description": "Desarrollamos aplicaciones multiplataforma para iOS y Android que ofrecen experiencias excepcionales.",
+            "features": ["Apps Híbridas", "Progressive Web Apps"]
         },
         "desktop": {
             "title": "Aplicaciones de Escritorio",
@@ -68,22 +67,6 @@
             "title": "Software Empresarial",
             "description": "Diseñamos sistemas a medida que optimizan procesos y mejoran la eficiencia operativa de tu empresa.",
             "features": ["ERP Personalizados", "CRM a Medida", "Automatización de Procesos"]
-        }
-    },
-    "products": {
-        "title": "Nuestros Proyectos",
-        "subtitle": "Casos de éxito que demuestran nuestra experiencia",
-        "project1": {
-            "title": "E-Commerce Platform",
-            "description": "Plataforma de e-commerce completa con gestión de inventario, pagos integrados y panel administrativo."
-        },
-        "project2": {
-            "title": "Business Analytics Dashboard",
-            "description": "Panel de análisis en tiempo real con visualización de datos y reportes personalizados para la toma de decisiones."
-        },
-        "project3": {
-            "title": "Delivery Mobile App",
-            "description": "Aplicación móvil para servicio de delivery con seguimiento en tiempo real, pagos y calificaciones."
         }
     },
     "contact": {

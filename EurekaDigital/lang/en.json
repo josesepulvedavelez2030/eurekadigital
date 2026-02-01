@@ -4,7 +4,6 @@
         "home": "Home",
         "about": "About",
         "services": "Services",
-        "products": "Products",
         "contact": "Contact"
     },
     "hero": {
@@ -56,8 +55,8 @@
         },
         "mobile": {
             "title": "Mobile Applications",
-            "description": "We develop native and cross-platform applications for iOS and Android that offer exceptional experiences.",
-            "features": ["Native Apps", "Hybrid Apps", "Progressive Web Apps"]
+            "description": "We develop cross-platform applications for iOS and Android that offer exceptional experiences.",
+            "features": ["Hybrid Apps", "Progressive Web Apps"]
         },
         "desktop": {
             "title": "Desktop Applications",
@@ -68,22 +67,6 @@
             "title": "Enterprise Software",
             "description": "We design custom systems that optimize processes and improve your company's operational efficiency.",
             "features": ["Custom ERPs", "Custom CRM", "Process Automation"]
-        }
-    },
-    "products": {
-        "title": "Our Projects",
-        "subtitle": "Success stories that demonstrate our expertise",
-        "project1": {
-            "title": "E-Commerce Platform",
-            "description": "Complete e-commerce platform with inventory management, integrated payments and admin panel."
-        },
-        "project2": {
-            "title": "Business Analytics Dashboard",
-            "description": "Real-time analytics dashboard with data visualization and custom reports for decision making."
-        },
-        "project3": {
-            "title": "Delivery Mobile App",
-            "description": "Mobile application for delivery service with real-time tracking, payments and ratings."
         }
     },
     "contact": {
