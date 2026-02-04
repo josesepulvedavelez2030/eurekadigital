@@ -212,46 +212,100 @@
             width: 100%;
         }
 
-        /* Selector de idioma con banderas */
-        .language-selector {
+        /* Selector de idioma dropdown */
+        .language-dropdown {
+            position: relative;
             display: flex;
             align-items: center;
             flex-shrink: 0;
         }
 
         .lang-btn {
-            background: none;
-            border: 3px solid transparent;
+            background: rgba(0, 0, 0, 0.5);
+            border: 3px solid var(--turquoise);
             border-radius: 8px;
-            width: 50px;
-            height: 35px;
+            width: 80px;
+            height: 40px;
             cursor: pointer;
             transition: all 0.3s;
             overflow: hidden;
-            padding: 0;
-            position: relative;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            display: none;
-        }
-
-        .lang-btn.active {
-            display: block;
-            border-color: var(--turquoise);
+            padding: 3px 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
             box-shadow: 0 0 0 3px rgba(64, 224, 208, 0.3), 0 0 20px rgba(64, 224, 208, 0.6);
-            transform: scale(1.1);
         }
 
         .lang-btn img {
-            width: 100%;
-            height: 100%;
+            width: 35px;
+            height: 25px;
             object-fit: cover;
-            border-radius: 4px;
+            border-radius: 3px;
             display: block;
         }
 
-        .lang-btn:hover {
-            transform: scale(1.15);
-            box-shadow: 0 0 20px rgba(64, 224, 208, 0.6);
+        .dropdown-arrow {
+            color: var(--turquoise);
+            font-size: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .lang-btn:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .lang-options {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 8px;
+            background: rgba(0, 0, 0, 0.9);
+            border: 2px solid var(--turquoise);
+            border-radius: 8px;
+            padding: 8px 0;
+            display: none;
+            flex-direction: column;
+            min-width: 140px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .lang-options.show {
+            display: flex;
+        }
+
+        .lang-option {
+            background: none;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s;
+            color: white;
+            font-size: 14px;
+            text-align: left;
+            width: 100%;
+        }
+
+        .lang-option:hover {
+            background: rgba(64, 224, 208, 0.2);
+        }
+
+        .lang-option.active {
+            background: rgba(64, 224, 208, 0.3);
+        }
+
+        .lang-option img {
+            width: 30px;
+            height: 20px;
+            object-fit: cover;
+            border-radius: 3px;
+        }
+
+        .lang-option span {
+            flex: 1;
         }
 
         /* Botón hamburguesa - solo visible en móvil */
@@ -829,13 +883,21 @@
                 <li><a href="#contacto" data-es="Contacto" data-en="Contact" onclick="closeMenu()">Contacto</a></li>
             </ul>
 
-            <div class="language-selector">
-                <button class="lang-btn" onclick="changeLanguage('es', this)" title="Español" id="btn-es">
-                    <img src="https://flagcdn.com/w80/co.png" alt="Español">
+            <div class="language-dropdown">
+                <button class="lang-btn active" onclick="toggleLangDropdown()" title="Seleccionar idioma" id="lang-toggle">
+                    <img src="https://flagcdn.com/w80/co.png" alt="Español" id="active-flag">
+                    <span class="dropdown-arrow">▼</span>
                 </button>
-                <button class="lang-btn active" onclick="changeLanguage('en', this)" title="English" id="btn-en">
-                    <img src="https://flagcdn.com/w80/us.png" alt="English">
-                </button>
+                <div class="lang-options" id="lang-options">
+                    <button class="lang-option" onclick="changeLanguage('es', this)" title="Español" id="opt-es">
+                        <img src="https://flagcdn.com/w80/co.png" alt="Español">
+                        <span>Español</span>
+                    </button>
+                    <button class="lang-option" onclick="changeLanguage('en', this)" title="English" id="opt-en">
+                        <img src="https://flagcdn.com/w80/us.png" alt="English">
+                        <span>English</span>
+                    </button>
+                </div>
             </div>
         </nav>
     </header>
@@ -1111,24 +1173,48 @@
             }
         }
 
+        // Toggle del dropdown de idioma
+        function toggleLangDropdown() {
+            const dropdown = document.getElementById('lang-options');
+            dropdown.classList.toggle('show');
+        }
+
+        // Cerrar dropdown al hacer click fuera
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('lang-options');
+            const toggle = document.getElementById('lang-toggle');
+            if (!toggle.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.classList.remove('show');
+            }
+        });
+
         // Cambio de idioma
         function changeLanguage(lang, btn) {
             currentLang = lang;
             const t = translations[lang];
             
-            // Actualizar botones activos - mostrar solo la bandera del idioma opuesto
-            const btnEs = document.getElementById('btn-es');
-            const btnEn = document.getElementById('btn-en');
+            // Actualizar bandera activa en el botón principal
+            const activeFlag = document.getElementById('active-flag');
+            const langOptions = document.getElementById('lang-options');
+            const optEs = document.getElementById('opt-es');
+            const optEn = document.getElementById('opt-en');
             
             if (lang === 'es') {
-                // Si está en español, mostrar bandera de EE.UU. para cambiar a inglés
-                btnEs.classList.remove('active');
-                btnEn.classList.add('active');
+                // Si está en español, mostrar bandera de Colombia
+                activeFlag.src = 'https://flagcdn.com/w80/co.png';
+                activeFlag.alt = 'Español';
+                optEs.classList.add('active');
+                optEn.classList.remove('active');
             } else {
-                // Si está en inglés, mostrar bandera de Colombia para cambiar a español
-                btnEn.classList.remove('active');
-                btnEs.classList.add('active');
+                // Si está en inglés, mostrar bandera de USA
+                activeFlag.src = 'https://flagcdn.com/w80/us.png';
+                activeFlag.alt = 'English';
+                optEn.classList.add('active');
+                optEs.classList.remove('active');
             }
+            
+            // Cerrar el dropdown
+            langOptions.classList.remove('show');
             
             // Actualizar navegación
             const navLinks = document.querySelectorAll('.nav-links a');
