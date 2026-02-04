@@ -609,6 +609,18 @@
             font-family: 'Orbitron', sans-serif;
         }
 
+        .contact-link {
+            color: inherit;
+            text-decoration: none;
+            font-size: 16px;
+            display: block;
+            transition: all 0.3s;
+        }
+
+        .contact-link:hover {
+            color: var(--turquoise);
+        }
+
         /* WhatsApp Flotante */
         .whatsapp-float {
             position: fixed;
@@ -1008,17 +1020,17 @@
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
                     <h4>Email</h4>
-                    <p>info@eurekaweb.com.co</p>
+                    <a href="mailto:info@eurekaweb.com.co" class="contact-link email-link">info@eurekaweb.com.co</a>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
                     <h4 id="contacto-phone">Teléfono</h4>
-                    <p>+573174570000</p>
+                    <a href="https://wa.me/573174570000" target="_blank" class="contact-link phone-link">+573174570000</a>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-map-marker-alt"></i>
                     <h4 id="contacto-location">Ubicación</h4>
-                    <p>Global / Remoto</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Chía,Cundinamarca,Colombia" target="_blank" class="contact-link location-link">Chía, Cundinamarca</a>
                 </div>
             </div>
         </div>
@@ -1265,6 +1277,12 @@
             document.getElementById('contacto-desc').textContent = t.contacto.desc;
             document.getElementById('contacto-phone').textContent = t.contacto.phone;
             document.getElementById('contacto-location').textContent = t.contacto.location;
+            
+            // Actualizar textos de enlaces de contacto según idioma
+            const locationLink = document.querySelector('.location-link');
+            if (locationLink) {
+                locationLink.textContent = lang === 'es' ? 'Chía, Cundinamarca' : 'Chía, Cundinamarca';
+            }
             
             // Reiniciar efecto de escritura
             clearTimeout(typeTimeout);
